@@ -5,6 +5,7 @@ import Header from '../components/Header/Header';
 import Lists from './Lists';
 import List from './List';
 import Form from './Form';
+import GlobalContext from "../context/GlobalContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,15 +24,18 @@ const AppWrapper = styled.div`
 `;
 
 const App = () => (<>
-	<GlobalStyle/>
-	<AppWrapper>
-		<Header/>
-		<Switch>
-		  <Route exact path='/' component={Lists} />
-		  <Route path='/list/:id/new' component={Form} />
-		  <Route path='/list/:id' component={List} />
-		</Switch>
-	</AppWrapper>
-</>);
+		<GlobalStyle/>
+		<AppWrapper>
+			<Header/>
+			<GlobalContext>
+				<Switch>
+					<Route exact path="/" component={Lists}/>
+					<Route path="/list/:id/new" component={Form}/>
+					<Route path="/list/:id" component={List}/>
+				</Switch>
+			</GlobalContext>
+		</AppWrapper>
+	</>
+);
 
 export default App;

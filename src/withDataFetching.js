@@ -1,5 +1,10 @@
 import React from 'react';
 
+// withDataFetching은...
+// props를 인자로 받아서...
+// WrappedComponent을 인자로 받는 함수를...
+// 리턴하는 함수이다...
+// 존나 헷갈리게 해놨네
 const withDataFetching = props => WrappedComponent => {
   class WithDataFetching extends React.Component {
     constructor() {
@@ -15,6 +20,7 @@ const withDataFetching = props => WrappedComponent => {
       try {
         const data = await fetch(props.dataSource);
         const dataJSON = await data.json();
+        console.log(dataJSON);
 
         if (dataJSON) {
           this.setState({
