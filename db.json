@@ -84,5 +84,12 @@
 			"thumbnail": "https://picsum.photos/id/1040/400/400",
 			"price": "$5,000,000"
 		}
+	],
+	"notice-list":[
+		{
+			"articleId": 1,
+			"title": "공지사항 1",
+			"regDt": "2022-01-01"
+		}
 	]
 }
